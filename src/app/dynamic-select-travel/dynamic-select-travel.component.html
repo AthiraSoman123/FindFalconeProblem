@@ -1,0 +1,25 @@
+<form [formGroup]="selectTravelForm">
+    <div class="img-container">
+        <img src="{{selectedPlanetLocation}}">
+    </div>
+    <select class="form-control" id="planet" formControlName="planet" (change)="loadPlanetImage()">
+        <option></option>
+        <option *ngFor="let planet of planets">{{planet.name}}</option>
+    </select>
+    <div *ngIf="selectTravelForm.value.planet">
+        <div class="vehicles" *ngFor="let vehicle of vehicles" style="padding-left: 18px;">
+            <input class="form-check-input" type="radio" formControlName="vehicle" id="{{vehicle.name+destinationNumber}}" value="{{vehicle.name}}" (change)="processDestination($event)">
+            <label class="form-check-label" for="{{vehicle.name+destinationNumber}}">{{vehicle.name}}
+                ({{vehicle.total_no}})</label>
+        </div>
+
+
+    </div>
+    <div class="vehicleContainer" *ngIf="selectedPlanetName">
+        <div class="img-container">
+            <input class="form-control selected-planet" type="text" formControlName="selectedPlanetName" disabled>
+            <img src="{{selectedVehicleLocation}}">
+
+        </div>
+    </div>
+</form>

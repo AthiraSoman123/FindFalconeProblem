@@ -1,0 +1,43 @@
+<div class="row" style="padding-left: 10px;">
+    <div class="col col-8 ">
+        <span class="heading"> Select the planets and available vehicles:-</span>
+    </div>
+</div>
+<div class="row" style="padding-left: 10px;">
+    <div class="col col-2 ">
+        <div class="font-weight-bold text-center">Destination 1</div>
+        <dynamic-select-travel [destinationNumber]="1" [planets]="availablePlanets" [vehicles]="vehicles" (selectedDestination)='selectedDestination($event)'>
+        </dynamic-select-travel>
+    </div>
+    <div class="col col-2">
+        <div class="font-weight-bold text-center">Destination 2</div>
+        <dynamic-select-travel [destinationNumber]="2" [planets]="availablePlanets" [vehicles]="vehicles" (selectedDestination)='selectedDestination($event)'>
+        </dynamic-select-travel>
+    </div>
+    <div class="col col-2 ">
+        <div class="font-weight-bold text-center">Destination 3</div>
+        <dynamic-select-travel [destinationNumber]="3" [planets]="availablePlanets" [vehicles]="vehicles" (selectedDestination)='selectedDestination($event)'>
+        </dynamic-select-travel>
+    </div>
+    <div class="col col-2 ">
+        <div class="font-weight-bold text-center">Destination 4</div>
+        <dynamic-select-travel [destinationNumber]="4" [planets]="availablePlanets" [vehicles]="vehicles" (selectedDestination)='selectedDestination($event)'>
+        </dynamic-select-travel>
+    </div>
+
+    <div class="col col-4">
+        <span class="heading">Reference Tables</span>
+        <dynamic-table [headers]="headerList" [dataSource]="planets" [tableTitle]="planetTableTitle"></dynamic-table>
+        <dynamic-table [headers]="vehicleColumList" [dataSource]="vehicles" [tableTitle]="vehicleTableTitle"></dynamic-table>
+    </div>
+
+</div>
+
+<div class="row">
+    <div class="col col-4">
+        <span class="timeTaken">Time Taken : {{timeTaken}}</span>
+    </div>
+    <div class="col col-4" style="margin-left: 6px;">
+        <button class="btn" (click)="find()"><i class="fa fa-search"></i> Find Falcone!</button>
+    </div>
+</div>

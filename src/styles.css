@@ -1,0 +1,22 @@
+@import "~bootstrap/dist/css/bootstrap.css";
+@import "~font-awesome/css/font-awesome.css";
+body {
+    background-color: #D6EAF8;
+    line-height: -10px;
+    height: 90%;
+}
+
+.btn {
+    background-color: #007bff;
+    /* Blue background */
+    border: none;
+    /* Remove borders */
+    color: white;
+    /* White text */
+    font-size: 16px;
+    /* Set a font size */
+    cursor: pointer;
+    /* Mouse pointer on hover */
+    width: 250px;
+    margin-top: 20px;
+}

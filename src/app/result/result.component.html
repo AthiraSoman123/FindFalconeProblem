@@ -1,0 +1,25 @@
+<div class="row ">
+    <div class="col col-12 text-center">
+        <div *ngIf="responseStatus === 'success'">
+            <span class="tick-symbols"> <i class="fa fa-check-circle"></i></span>
+            <h2>Congratulations on Finding Falcone. King Shan is mighty pleased.</h2>
+            <br>
+            <h4>Time taken: {{timeTaken}}</h4>
+            <h4>Planet found: {{responsePlanetName}}</h4>
+        </div>
+
+        <div *ngIf="responseStatus === 'false'">
+            <span class="close-symbols"> <i class="fa fa-times-circle"></i></span>
+            <h2>No luck this time, we didn't find Falcone. Shall we try again? </h2>
+        </div>
+
+    </div>
+
+    <div class="col col-12 text-center error" *ngIf="responseError">
+        <h4>Error Occurred: {{responseError}}</h4>
+    </div>
+
+    <div class="col col-12 text-center">
+        <button class="btn" (click)=" home()"><i class="fa fa-repeat" ></i> Start Again</button>
+    </div>
+</div>

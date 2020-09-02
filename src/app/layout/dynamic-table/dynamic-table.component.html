@@ -1,0 +1,12 @@
+<br>
+<h6 class="title">{{tableTitle}}</h6>
+<table>
+    <th *ngFor="let column of headers">
+        {{column | titlecase}}
+    </th>
+    <tr *ngFor="let row of dataSource">
+        <td *ngFor="let column of headers">
+            {{row[column]}}
+        </td>
+    </tr>
+</table>
